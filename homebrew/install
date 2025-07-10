@@ -1,0 +1,11 @@
+#!/usr/bin/env bash -f
+
+cd $(dirname $0)
+
+################################################################################
+
+if [[ ! -x /opt/homebrew/bin/brew ]]; then
+    eval "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew bundle --file ./Brewfile

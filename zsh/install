@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+################################################################################
+
+symlink_home   ./.zshenv
+symlink_config ./.zprofile zsh
+symlink_config ./.zshrc    zsh
+symlink_config ./spaceship.zsh

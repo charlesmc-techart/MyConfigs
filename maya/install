@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+integer -r YEAR=2026
+
+symlink_() {
+    symlink $1 ~/Library/Preferences/Autodesk/maya/$2/$1
+}
+
+################################################################################
+
+symlink_ Maya.env       $YEAR
+symlink_ myRigging.json ${YEAR}/prefs/workspaces
+symlink_ userSetup.py   scripts

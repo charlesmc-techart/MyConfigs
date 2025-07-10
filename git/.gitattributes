@@ -1,0 +1,179 @@
+*               text=auto
+
+# configs
+*.env           text
+
+.gitattributes  text
+.gitconfig      text
+.gitignore      text
+
+
+# C/C++
+*.c             text   diff=cpp
+*.cc            text   diff=cpp
+*.cpp           text   diff=cpp
+
+*.h             text   diff=cpp
+*.hh            text   diff=cpp
+*.hpp           text   diff=cpp
+
+Makefile        text
+
+
+# Javascript
+*.js            text
+
+
+# Python
+*.py            text   diff=python
+*.pyi           text   diff=python
+
+# Ren'Py
+*.rpy           text
+*.rpym          text
+
+
+# scripts
+*.sh            text   eol=lf
+
+*.zsh           text   eol=lf
+.zprofile       text   eol=lf
+.zshenv         text   eol=lf
+.zshrc          text   eol=lf
+
+*.bash          text   eol=lf
+.bashrc         text   eol=lf
+
+*.bat           text   eol=crlf
+*.cmd           text   eol=crlf
+*.ps1           text   eol=crlf
+
+
+# serialization
+*.json          text
+*.xml           text
+*.yml           text
+
+
+# web
+*.html          text   diff=html
+
+*.css           text   diff=css
+*.scss          text   diff=css
+
+
+# archives
+*.7z            binary
+*.aar           binary
+*.gz            binary
+*.tar           binary
+*.txz           binary
+*.xz            binary
+*.zip           binary
+
+
+# documents
+*.md            text   diff=markdown
+*.pdf          -text
+*.txt           text
+
+
+# images
+*.exr           binary
+*.gif           binary
+*.jpg           binary
+*.jpeg          binary
+*.png           binary
+*.tif           binary
+*.tiff          binary
+
+*.dcp           binary
+*.icc           binary
+
+# Krita
+*.kra           binary
+
+
+# 3d assets
+*.mtl           text
+*.obj           text
+
+# Alembic
+*.abc           binary
+# FBX
+*.fbx           binary
+
+# Blender
+*.blend*        binary
+
+
+# audio
+*.mp3           binary
+*.ogg           binary
+*.wav           binary
+
+
+# vidoes
+*.avi           binary
+*.mov           binary
+*.mp4           binary
+
+
+# misc
+*.template     -text
+
+*.dat           binary
+# fonts
+*.ttf           binary
+
+
+# Apple iWork
+*.numbers       binary
+*.pages         binary
+
+
+# Google Suite
+*.gs            text
+
+*.gdoc          binary
+*.gsheet        binary
+*.gslides       binary
+
+
+# Adobe Suite
+# Lightroom Classic
+*.lrtemplate    text
+# Brushes
+*.abr           binary
+
+# After Effects
+*.aep           binary
+# Audition
+*.pkf           binary
+# Photoshop
+*.psd           binary
+# Premiere
+*.prproj        binary
+
+
+# Clip Studio Paint
+*.clip          binary
+*.cmc           binary
+
+
+# Houdini
+*.geo           text
+*.bgeo          binary
+
+*.hip           binary
+*.hipnc         binary
+
+
+# Maya
+*.mel           text
+
+*.ma            text
+*.mb            binary
+
+*.mcx           binary
+*.mcc           binary

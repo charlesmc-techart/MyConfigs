@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+################################################################################
+
+symlink_home   ./.gitconfig
+symlink_config ./.gitattributes git
+symlink_config ./.gitignore     git

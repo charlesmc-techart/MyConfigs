@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+################################################################################
+
+for src in ./.*; do
+    [[ $src != ./.DS_Store ]] && symlink_home $src
+done

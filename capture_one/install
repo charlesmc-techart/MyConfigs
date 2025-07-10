@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+################################################################################
+
+for src in ./Metadata/*.copreset; do
+    hardlink $src ${src/./"${APP_SUPPORT_DIR}/Capture One/Presets60"}
+done
+
+for src in ./Profiles/*.icc; do
+    symlink $src ${src/./"${LIBRARY_DIR}/ColorSync"}
+done

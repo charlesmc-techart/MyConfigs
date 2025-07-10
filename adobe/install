@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+is_installed() {
+    [[ -d $1 ]]
+}
+
+has_contents() {
+    [[ -d $1 && ! -L $1 && $(ls -A $1) ]]
+}
+
+backup() {
+    mv $1 ${1}~ && echo "Backed up '${1:t}' because it was not empty"
+}
+
+################################################################################
+
+for dir_name in CameraRaw Lightroom; do
+    target_dir="${APP_SUPPORT_DIR}/Adobe"
+    is_installed ~target_dir/$dir_name || continue
+
+    for src in ./$dir_name/*(/); do
+        target=${src/./~target_dir}
+        has_contents ~target && backup ~target
+
+        symlink $src ~target
+    done
+done

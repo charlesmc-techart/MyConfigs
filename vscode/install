@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h} && source ../link.zsh
+
+################################################################################
+
+for src in ./*.json; do
+    symlink $src ${src/./"${APP_SUPPORT_DIR}/Code/User"}
+done

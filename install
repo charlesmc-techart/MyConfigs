@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh -f
+
+cd ${0:A:h}
+
+./macos
+
+for d in homebrew zsh misc git vscode bin maya adobe capture_one; do
+    [[ -d ./$d ]] && ./$d/install
+done
+
+touch ~/.hushlogin
