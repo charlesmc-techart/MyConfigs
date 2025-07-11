@@ -4,6 +4,8 @@ cd ${0:A:h} && source ../link.zsh
 
 ################################################################################
 
-for src in ./.*; do
-    [[ $src != ./.DS_Store ]] && symlink_home $src
+for src in ./.*(.); do
+    [[ $src -ef ./.DS_Store ]] && continue
+
+    symlink_home $src
 done
