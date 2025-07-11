@@ -54,7 +54,6 @@ function ds_stores {
 
 function refresh {
     source ~my_configs/zsh/.zprofile ~my_configs/zsh/.zshrc
-
 }
 
 function brew_update {
@@ -64,8 +63,9 @@ function brew_update {
 }
 
 function todo {
-	echo "- $@" >> ~/Desktop/todo.txt
+    echo "- $@" >> ~/Desktop/todo.txt
 }
+
 
 # PROMPT #######################################################################
 
