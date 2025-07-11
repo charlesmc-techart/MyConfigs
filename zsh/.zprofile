@@ -9,13 +9,15 @@ export -TU PYTHONPATH pythonpath
 MyFiles=~/MyFiles
 if [[ -d ~MyFiles ]]; then
     hash -d MyFiles
-    hash -d my_journals=~MyFiles/Documents/Journals
-    hash -d shasta=~my_journals/63.72.75.73.68.65.73/ᜇᜓ\ ᜐ᜔ᜌᜊᜒᜉ
     hash -d my_configs=~MyFiles/Configs
 
-    hash -d deanza="$MyFiles/De Anza College"
+    my_journals=~MyFiles/Documents/Journals
+    hash -d my_journals
+    hash -d my_shasta="${my_journals}/63.72.75.73.68.65.73/ᜇᜓ ᜐ᜔ᜌᜊᜒᜉ"
 
-    pythonpath=(~my_configs $pythonpath)
+    hash -d deanza="${MyFiles}/De Anza College"
+
+    pythonpath=(~my_configs/bin ~my_configs $pythonpath)
 else
     unset MyFiles
 fi
