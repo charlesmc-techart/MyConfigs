@@ -1,13 +1,9 @@
 readonly LIBRARY_DIR=~/Library
 readonly APP_SUPPORT_DIR="${LIBRARY_DIR}/Application Support"
 
-function hardlink {
-    install -v -l h $1 $2
-}
+alias hardlink='install -v -l h'
 
-function symlink {
-    install -v -l as $1 $2
-}
+alias symlink='install -v -l as'
 
 function symlink_home {
     symlink $1 ~
