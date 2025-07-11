@@ -4,8 +4,8 @@ cd ${0:A:h}
 
 ./macos
 
-for d in homebrew zsh misc git vscode bin maya adobe capture_one; do
-    [[ -d ./$d ]] && ./$d/install
+for dir in homebrew zsh misc git vscode bin maya adobe capture_one; do
+    "./${dir}/install"
 done
 
 touch ~/.hushlogin
