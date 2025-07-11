@@ -4,8 +4,8 @@ cd ${0:A:h} && source ../link.zsh
 
 integer -r YEAR=2026
 
-symlink_() {
-    symlink $1 ~/Library/Preferences/Autodesk/maya/$2/$1
+function symlink_ {
+    symlink $1 ~LIBRARY_DIR/Preferences/Autodesk/maya/$2/$1
 }
 
 ################################################################################
