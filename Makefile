@@ -16,10 +16,10 @@ all: macos homebrew $(PHONIES)
 adobe:
 	cd ./$@;\
 	for dir_name in CameraRaw Lightroom; do\
-		dir="$(APP_SUPPORT_DIR)/Adobe/$$dir_name";\
-		for src in "$$dir_name"/*; do\
-			target="$$dir/$$(basename "$$src")";\
-			if [[ ! -L "$$target" && -d "$$target" && "$$(ls -A "$$target")" ]]; then\
+		target_dir="$(APP_SUPPORT_DIR)/Adobe/$${dir_name}";\
+		for src in $${dir_name}/*; do\
+			target="$${target_dir}/$$(basename "$$src")";\
+			if [[ ! -L "$$target" && -d "$$target" && $$(ls -A "$$target") ]]; then\
 				mv "$$target" "$${target}.bak";\
 				echo "Backed up $$(basename "$$target") because it was not empty" >&2;\
 			fi;\
@@ -40,7 +40,7 @@ capture_one:
 
 exiftool:
 	for file in ./$@/*.args; do\
-		$(symlink) "$$file" $(LOCAL_CONFIG_DIR)/$@;\
+		$(symlink) $$file $(LOCAL_CONFIG_DIR)/$@;\
 	done
 
 
@@ -73,13 +73,13 @@ maya: maya/Maya.env maya/myRigging.json maya/userSetup.py
 
 misc: misc/.bashrc misc/.vimrc
 	for src in $^; do\
-		$(symlink) "$$src" ~;\
+		$(symlink) $$src ~;\
 	done
 
 
 vscode: vscode/settings.json vscode/tasks.json
 	for src in $^; do\
-		$(symlink) "$$src" "$(APP_SUPPORT_DIR)/Code/User/$$(basename $$src)";\
+		$(symlink) $$src "$(APP_SUPPORT_DIR)/Code/User/$$(basename $$src)";\
 	done
 
 
