@@ -29,15 +29,14 @@ setopt SHARE_HISTORY
 # ALIASES ######################################################################
 
 
-alias -g ...='../../'
-alias -g ....='../../../'
-alias -g .....='../../../../'
-alias -g ......='../../../../../'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
 
 alias ls='ls -hp --color=auto'
 
-alias ppath='echo "${PATH//:/\n}"'
-alias sysinfo='open "/System/Applications/Utilities/System Information.app"'
+alias ppath='echo "${PATH/:/\n}"'
 
 alias exiftool='exiftool -P'
 
@@ -47,9 +46,9 @@ alias exiftool='exiftool -P'
 
 function ds_stores {
     dir=.
-    [[ $1 ]] && dir=$1 && shift
+    [[ $1 && -d $1 ]] && dir=$1 && shift
 
-    find $dir -type f -name .DS_Store -print $@
+    find ~dir -type f -name .DS_Store -print $@
 }
 
 function refresh {
