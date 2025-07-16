@@ -4,7 +4,7 @@ export VISUAL=code
 export -UT PYTHONPATH pythonpath
 export -UT LD_LIBRARY_PATH ld_library_path
 
-# NAMED DIRECTORIES ############################################################
+# named directories ############################################################
 
 MyFiles=~/MyFiles
 if [[ -d ~MyFiles ]]; then
@@ -39,13 +39,13 @@ else
     unset lconfig
 fi
 
-# PATHS ########################################################################
+# paths ########################################################################
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 declare -aU path
 
-# Personal Binaries
+# personal executables
 lbin=~/.local/bin
 if [[ -d ~lbin ]]; then
     hash -d lbin
