@@ -58,7 +58,7 @@ homebrew: Brewfile
 	brew bundle
 
 
-macos: macos.sh
+macos: macos.zsh
 	./$<
 
 
