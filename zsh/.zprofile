@@ -12,9 +12,8 @@ if [[ -d ~MyFiles ]]; then
 
     declare -aU directories
     readonly directories=(3D Configs Documents Pictures Programming Wiki Work)
-    for dir in $directories; do
-        key="$(echo "$dir" | tr -d ' ')"
-        hash -d "My${key}"=~MyFiles/"$dir"
+    for dir in $=directories; do
+        hash -d My${dir}=~MyFiles/$dir
     done
 
     hash -d MyJournals=~MyFiles/Documents/Journals
@@ -24,9 +23,9 @@ if [[ -d ~MyFiles ]]; then
         hash -d My${dir}=~MyPictures/$dir
     done
 
-    hash -d DeAnza="${MyFiles}/De Anza College"
+    hash -d DeAnza=~MyFiles/'De Anza College'
 
-    pythonpath=(~MyProgramming/bin ~MyProgramming ~MyConfigs $pythonpath)
+    pythonpath=(~MyProgramming/bin ~MyProgramming ~MyConfigs $=pythonpath)
 else
     unset MyFiles
 fi
@@ -42,16 +41,16 @@ fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-declare -U path
+declare -aU path
 
 # Ruby
-path=(/opt/homebrew/Cellar/ruby/3.4.3/bin $path)
+path=(/opt/homebrew/Cellar/ruby/3.4.3/bin $=path)
 
 # Personal Binaries
 lbin=~/.local/bin
 if [[ -d ~lbin ]]; then
     hash -d lbin
-    path=(~lbin $path)
+    path=(~lbin $=path)
 else
     unset lbin
 fi

@@ -29,10 +29,10 @@ setopt SHARE_HISTORY
 # ALIASES ######################################################################
 
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
+alias -g ...=../..
+alias -g ....=../../..
+alias -g .....=../../../..
+alias -g ......=../../../../..
 
 alias ls='ls -hp --color=auto'
 
@@ -57,7 +57,7 @@ function refresh {
 
 function brew_update {
     for cmd in update upgrade 'upgrade --cask' autoremove cleanup; do
-        brew ${=cmd}
+        brew $=cmd
     done
 }
 
@@ -69,4 +69,4 @@ function todo {
 # PROMPT #######################################################################
 
 
-source "/opt/homebrew/opt/spaceship/spaceship.zsh"
+source /opt/homebrew/opt/spaceship/spaceship.zsh
