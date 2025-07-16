@@ -47,9 +47,6 @@ declare -aU path
 
 # personal executables
 lbin=~/.local/bin
-if [[ -d ~lbin ]]; then
-    hash -d lbin
-    path=(~lbin $=path)
-else
-    unset lbin
-fi
+[[ -d ~lbin ]] || mkdir ~lbin
+hash -d lbin
+path=(~lbin $=path)
