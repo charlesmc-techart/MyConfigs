@@ -9,15 +9,24 @@ export -TU PYTHONPATH pythonpath
 MyFiles=~/MyFiles
 if [[ -d ~MyFiles ]]; then
     hash -d MyFiles
-    hash -d my_configs=~MyFiles/Configs
 
-    my_journals=~MyFiles/Documents/Journals
-    hash -d my_journals
-    hash -d my_shasta="${my_journals}/63.72.75.73.68.65.73/ᜇᜓ ᜐ᜔ᜌᜊᜒᜉ"
+    declare -aU directories
+    readonly directories=(3D Configs Documents Pictures Programming Wiki Work)
+    for dir in $directories; do
+        key="$(echo "$dir" | tr -d ' ')"
+        hash -d "My${key}"=~MyFiles/"$dir"
+    done
 
-    hash -d deanza="${MyFiles}/De Anza College"
+    hash -d MyJournals=~MyFiles/Documents/Journals
+    hash -d MyShasta=~MyJournals/63.72.75.73.68.65.73/'ᜇᜓ ᜐ᜔ᜌᜊᜒᜉ'
 
-    pythonpath=(~my_configs/bin ~my_configs $pythonpath)
+    for dir in Art Photos Screenshots; do
+        hash -d My${dir}=~MyPictures/$dir
+    done
+
+    hash -d DeAnza="${MyFiles}/De Anza College"
+
+    pythonpath=(~MyProgramming/bin ~MyProgramming ~MyConfigs $pythonpath)
 else
     unset MyFiles
 fi
