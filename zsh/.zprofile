@@ -45,9 +45,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 declare -aU path
 
-# Ruby
-path=(/opt/homebrew/Cellar/ruby/3.4.3/bin $=path)
-
 # Personal Binaries
 lbin=~/.local/bin
 if [[ -d ~lbin ]]; then
