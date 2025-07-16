@@ -36,7 +36,7 @@ alias -g ......=../../../../..
 
 alias ls='ls -hp --color=auto'
 
-alias ppath='echo "${PATH/:/\n}"'
+alias ppath='echo "${PATH//:/\n}"'
 
 alias exiftool='exiftool -P'
 
