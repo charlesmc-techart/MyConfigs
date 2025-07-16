@@ -52,7 +52,7 @@ function ds_stores {
 }
 
 function refresh {
-    source ~my_configs/zsh/.zprofile ~my_configs/zsh/.zshrc
+    source ~MyConfigs/zsh/.zprofile ~MyConfigs/zsh/.zshrc
 }
 
 function brew_update {
