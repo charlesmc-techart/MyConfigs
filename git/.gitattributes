@@ -1,14 +1,18 @@
 *               text=auto
 
-# configs
+
+# configs ######################################################################
+*.cfg           text
 *.env           text
 
 .gitattributes  text
 .gitconfig      text
 .gitignore      text
 
+makefile        text
 
-# C/C++
+
+# C/C++ ########################################################################
 *.c             text   diff=cpp
 *.cc            text   diff=cpp
 *.cpp           text   diff=cpp
@@ -17,70 +21,69 @@
 *.hh            text   diff=cpp
 *.hpp           text   diff=cpp
 
-Makefile        text
 
-
-# Javascript
+# JavaScript ###################################################################
 *.js            text
 
 
-# Python
+# Python #######################################################################
 *.py            text   diff=python
 *.pyi           text   diff=python
 
-# Ren'Py
+# Ren'Py #######################################################################
 *.rpy           text
 *.rpym          text
 
 
-# scripts
-*.sh            text   eol=lf
+# shell scripts ################################################################
+*.sh            text   diff=bash     eol=lf
 
-*.zsh           text   eol=lf
-.zprofile       text   eol=lf
-.zshenv         text   eol=lf
-.zshrc          text   eol=lf
+*.bash          text   diff=bash     eol=lf
+.bashrc         text   diff=bash     eol=lf
 
-*.bash          text   eol=lf
-.bashrc         text   eol=lf
+*.zsh           text   diff=bash     eol=lf
+.zprofile       text   diff=bash     eol=lf
+.zshenv         text   diff=bash     eol=lf
+.zshrc          text   diff=bash     eol=lf
 
 *.bat           text   eol=crlf
 *.cmd           text   eol=crlf
 *.ps1           text   eol=crlf
 
 
-# serialization
+# serialization ################################################################
 *.json          text
 *.xml           text
 *.yml           text
 
 
-# web
+# web ##########################################################################
 *.html          text   diff=html
 
 *.css           text   diff=css
 *.scss          text   diff=css
 
 
-# archives
+# archives #####################################################################
 *.7z            binary
 *.aar           binary
-*.gz            binary
 *.tar           binary
 *.txz           binary
 *.xz            binary
 *.zip           binary
 
 
-# documents
+# documents ####################################################################
 *.md            text   diff=markdown
 *.pdf          -text
+*.rst           text
 *.txt           text
 
 
-# images
+# images #######################################################################
 *.exr           binary
 *.gif           binary
+*.heic          binary
 *.jpg           binary
 *.jpeg          binary
 *.png           binary
@@ -90,11 +93,8 @@ Makefile        text
 *.dcp           binary
 *.icc           binary
 
-# Krita
-*.kra           binary
 
-
-# 3d assets
+# 3d assets ####################################################################
 *.mtl           text
 *.obj           text
 
@@ -107,32 +107,33 @@ Makefile        text
 *.blend*        binary
 
 
-# audio
+# audio ########################################################################
 *.mp3           binary
 *.ogg           binary
 *.wav           binary
 
 
-# vidoes
+# vidoes #######################################################################
 *.avi           binary
 *.mov           binary
 *.mp4           binary
 
 
-# misc
+# misc #########################################################################
 *.template     -text
+*.xmp           text
 
 *.dat           binary
 # fonts
 *.ttf           binary
 
 
-# Apple iWork
+# Apple iWork ##################################################################
 *.numbers       binary
 *.pages         binary
 
 
-# Google Suite
+# Google Suite #################################################################
 *.gs            text
 
 *.gdoc          binary
@@ -140,28 +141,29 @@ Makefile        text
 *.gslides       binary
 
 
-# Adobe Suite
+# Adobe Suite ##################################################################
 # Lightroom Classic
 *.lrtemplate    text
 # Brushes
 *.abr           binary
-
-# After Effects
-*.aep           binary
-# Audition
-*.pkf           binary
 # Photoshop
 *.psd           binary
-# Premiere
-*.prproj        binary
 
 
-# Clip Studio Paint
+# Capture One ##################################################################
+*.copreset      text
+
+
+# Clip Studio Paint ############################################################
 *.clip          binary
 *.cmc           binary
 
 
-# Houdini
+# Krita ########################################################################
+*.kra           binary
+
+
+# Houdini ######################################################################
 *.geo           text
 *.bgeo          binary
 
@@ -169,7 +171,7 @@ Makefile        text
 *.hipnc         binary
 
 
-# Maya
+# Maya #########################################################################
 *.mel           text
 
 *.ma            text
