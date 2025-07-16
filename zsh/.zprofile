@@ -1,8 +1,8 @@
 export EDITOR=vim
 export VISUAL=code
 
-export -TU PYTHONPATH pythonpath
-# export -TU LD_LIBRARY_PATH ld_library_path
+export -UT PYTHONPATH pythonpath
+export -UT LD_LIBRARY_PATH ld_library_path
 
 # NAMED DIRECTORIES ############################################################
 
@@ -11,7 +11,7 @@ if [[ -d ~MyFiles ]]; then
     hash -d MyFiles
 
     declare -aU directories
-    readonly directories=(3D Configs Documents Pictures Programming Wiki Work)
+    directories=(3D Configs Documents Pictures Programming Wiki Work)
     for dir in $=directories; do
         hash -d My${dir}=~MyFiles/$dir
     done
@@ -26,6 +26,8 @@ if [[ -d ~MyFiles ]]; then
     hash -d DeAnza=~MyFiles/'De Anza College'
 
     pythonpath=(~MyProgramming/bin ~MyProgramming ~MyConfigs $=pythonpath)
+
+    unset directories dir
 else
     unset MyFiles
 fi
