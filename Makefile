@@ -58,8 +58,8 @@ homebrew: Brewfile
 	brew bundle
 
 
-macos:
-	./$@
+macos: macos.sh
+	./$<
 
 
 MAYA_YEAR := 2025

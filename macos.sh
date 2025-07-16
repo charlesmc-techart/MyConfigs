@@ -2,11 +2,11 @@
 
 sudo -v || exit 1
 
-cd ${0:A:h} && source ./link.zsh
+cd "$0:A:h"
 
 ################################################################################
 
-killall "System Settings" 2>/dev/null
+killall 'System Settings' 2>/dev/null
 
 
 xcode-select --install 2>/dev/null
@@ -107,7 +107,7 @@ dw -g NSAutomaticSpellingCorrectionEnabled -bool false
 
 # mouse
 dw -g com.apple.mouse.scaling -float 0.125
-dw com.apple.Terminal 'FocusFollowsMouse' -bool true
+dw com.apple.Terminal FocusFollowsMouse -bool true
 
 
 killall Dock Finder SystemUIServer
