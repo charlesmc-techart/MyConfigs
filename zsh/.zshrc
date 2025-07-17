@@ -37,6 +37,8 @@ alias ppath='echo "${PATH//:/\n}"'
 
 alias exiftool='exiftool -P'
 
+alias make=gmake
+
 # functions ####################################################################
 
 function ds_stores {
